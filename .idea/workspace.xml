@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c8b5d18-15c5-45d7-8f4e-8296d52fa630" name="Changes" comment="Preparing starting codes">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packages/containers/DryStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/containers/DryStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packages/containers/Liquid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/containers/Liquid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packages/containers/OpenSide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/containers/OpenSide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packages/containers/OpenTop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/containers/OpenTop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packages/containers/Refrigerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/containers/Refrigerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packages/containers/abstracts/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/containers/abstracts/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packages/ports/abstracts/Port.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/ports/abstracts/Port.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packages/users/abstracts/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/users/abstracts/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packages/vehicles/abstracts/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/vehicles/abstracts/Vehicle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,25 +39,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "openjdk-20",
-    "last_opened_file_path": "D:/My projects/University/COSC2081/COSC2081-Container-Port-Management/src/packages/vehicles/interfaces",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-20&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/My projects/University/COSC2081/COSC2081-Container-Port-Management/src/packages/vehicles/interfaces&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\My projects\University\COSC2081\COSC2081-Container-Port-Management\src\packages\vehicles\interfaces" />
@@ -82,7 +91,8 @@
       <workItem from="1694182127711" duration="180000" />
       <workItem from="1694182331639" duration="71000" />
       <workItem from="1694182422020" duration="147000" />
-      <workItem from="1694182684789" duration="5103000" />
+      <workItem from="1694182684789" duration="5501000" />
+      <workItem from="1694233217139" duration="1441000" />
     </task>
     <task id="LOCAL-00001" summary="updates">
       <option name="closed" value="true" />
@@ -124,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694189345729</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Preparing starting codes">
+      <option name="closed" value="true" />
+      <created>1694189420267</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694189420267</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
