@@ -2,24 +2,52 @@ package packages.guis;
 
 import packages.guis.builders.Gui;
 import packages.guis.builders.Menu;
-import packages.users.PortManager;
-import packages.users.SystemAdmin;
 import packages.users.abstracts.User;
-
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class ControlPanel {
-    private Menu menu;
     private User user;
-    private Gui mainGui;
-    private boolean keepMenuRunning = true;
+    private Menu controlMenu;
 
-    public ControlPanel(User user) {
-        this.user = user;
-        this.setup();
+    public ControlPanel() {}
+    public void run(){
+        while (true){
+            checkIfNoUser();
+
+            HashMap<Object, Object> guiData = this.controlMenu.run();
+
+            Gui gui = (Gui) guiData.get("gui");
+            String option = (String) guiData.get("option");
+            String id = gui.getId();
+
+            switch (id) {
+                case "profilePanel" -> {
+                    HashMap<String, String> options = gui.getOptions();
+
+                    String textOption = options.get(option);
+                    switch (textOption) {
+                        case "Log out" -> {
+                            this.user = null;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    private void checkIfNoUser(){
+        if(user == null){
+            showLoginPrompt();
+
+            if(this.user.getType().equals("portManager")){
+                this.setupForPortManager();
+            }else{
+                this.setupForSystemAdmin();
+            }
+        }
+    }
+    private void showLoginPrompt(){
+        Login login = new Login();
+        this.user = login.run();
     }
 
     private  void setupForPortManager(){
@@ -31,12 +59,13 @@ public class ControlPanel {
         guiOptions.put("4","Ports panel");
         guiOptions.put("5","Trips panel");
         guiOptions.put("6","Statistic");
-        mainGui = new Gui("controlPanel","Control Panel", guiOptions);
+        Gui mainGui = new Gui("controlPanel","Control Panel", guiOptions);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Change username");
         guiOptions.put("2","Change password");
-        guiOptions.put("3","Go back");
+        guiOptions.put("4","Log out");
+        guiOptions.put("5","Go back");
         Gui profilePanel = new Gui("profilePanel","Profile Panel", guiOptions);
 
         guiOptions = new HashMap<>();
@@ -77,9 +106,8 @@ public class ControlPanel {
         guis.put("1 4", tripsPanel);
         guis.put("1 5", staticticPanel);
 
-        menu = new Menu("controlPanel", "Control Panel", guis);
+        controlMenu = new Menu("controlPanel", "Control Panel", guis);
     }
-
     private void setupForSystemAdmin(){
         HashMap<String, String> guiOptions = new HashMap<>();
 
@@ -90,12 +118,13 @@ public class ControlPanel {
         guiOptions.put("5","Ports panel");
         guiOptions.put("6","Trips panel");
         guiOptions.put("7","Statistic");
-        mainGui = new Gui("controlPanel","Control Panel", guiOptions);
+        Gui mainGui = new Gui("controlPanel","Control Panel", guiOptions);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Change username");
         guiOptions.put("2","Change password");
-        guiOptions.put("3","Go back");
+        guiOptions.put("3","Log out");
+        guiOptions.put("4","Go back");
         Gui profilePanel = new Gui("profilePanel","Profile Panel", guiOptions);
 
         guiOptions = new HashMap<>();
@@ -155,25 +184,6 @@ public class ControlPanel {
         guis.put("1 6", tripsPanel);
         guis.put("1 7", statisticPanel);
 
-        menu = new Menu("controlPanel", "Control Panel", guis);
-    }
-    private void setup() {
-        if(this.user.getType().equals("portManager")){
-           this.setupForPortManager();
-        }else{
-            this.setupForSystemAdmin();
-        }
-    }
-    public void run(){
-        keepMenuRunning = true;
-
-        Gui gui;
-        while (keepMenuRunning){
-            gui = menu.run();
-        }
-    }
-    public void stop(){
-        keepMenuRunning = false;
-        menu.stop();
+        controlMenu = new Menu("controlPanel", "Control Panel", guis);
     }
 }

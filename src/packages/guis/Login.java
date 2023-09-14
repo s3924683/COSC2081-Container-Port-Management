@@ -2,6 +2,9 @@ package packages.guis;
 
 import packages.guis.builders.Gui;
 import packages.guis.builders.Menu;
+import packages.users.PortManager;
+import packages.users.SystemAdmin;
+import packages.users.abstracts.User;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -33,7 +36,7 @@ public class Login{
 
         menu = new Menu("login", "Login Menu", guis);
     }
-    public HashMap<String, String> run(){
+    public User run(){
         keepMenuRunning = true;
 
         Scanner input = new Scanner(System.in);
@@ -47,7 +50,9 @@ public class Login{
                 throw new RuntimeException(e);
             }
 
-            gui = menu.run();
+            HashMap<Object, Object> guiData = menu.run();
+
+            gui = (Gui) guiData.get("gui");
 
             String id = gui.getId();
 
@@ -79,13 +84,15 @@ public class Login{
             }
 
             if(userFound){
-                HashMap<String, String> userData = new HashMap<>();
+                User user;
 
-                userData.put("username",username);
-                userData.put("password", password);
-                userData.put("type", type);
+                if(type.equals("systemAdmin")){
+                    user = new SystemAdmin(username,password);
+                }else{
+                    user = new PortManager(username,password);
+                }
 
-               return  userData;
+                return user;
             }else{
                 System.out.println("Username or Password is incorrect!");
             }

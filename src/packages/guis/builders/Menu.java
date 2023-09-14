@@ -24,7 +24,7 @@ public class Menu{
         this.name = name;
 
     }
-    public Gui run(){
+    public HashMap<Object, Object> run(){
         if(!keepRunning){
             keepRunning = true;
         }
@@ -70,7 +70,11 @@ public class Menu{
                     }else if(guiOption.equals("Exit")){
                         keepRunning = false;
                     }else{
-                        return gui;
+                        HashMap<Object, Object> guiData = new HashMap<>();
+                        guiData.put("gui",gui);
+                        guiData.put("option", inputResult);
+
+                        return guiData;
                     }
                 };
             }else{
