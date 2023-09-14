@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c8b5d18-15c5-45d7-8f4e-8296d52fa630" name="Changes" comment="Preparing starting codes">
-      <change afterPath="$PROJECT_DIR$/src/packages/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/packages/ErrorHandlers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/packages/SuccessHandlers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/packages/TextGui.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/packages/Tools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1c8b5d18-15c5-45d7-8f4e-8296d52fa630" name="Changes" comment="Productions">
+      <change afterPath="$PROJECT_DIR$/archived/TextMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packages/guis/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packages/guis/builders/Gui.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packages/guis/builders/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/COSC2081-Container-Port-Management/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/COSC2081-Container-Port-Management/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/database/users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packages/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packages/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packages/TextGui.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +97,13 @@
       <workItem from="1694433032906" duration="2900000" />
       <workItem from="1694567360065" duration="7190000" />
       <workItem from="1694580371204" duration="6988000" />
+      <workItem from="1694587951717" duration="188000" />
+      <workItem from="1694593654778" duration="20000" />
+      <workItem from="1694604519544" duration="71000" />
+      <workItem from="1694659104465" duration="5240000" />
+      <workItem from="1694664397759" duration="1813000" />
+      <workItem from="1694666744742" duration="2075000" />
+      <workItem from="1694670277120" duration="5140000" />
     </task>
     <task id="LOCAL-00001" summary="updates">
       <option name="closed" value="true" />
@@ -155,7 +161,47 @@
       <option name="project" value="LOCAL" />
       <updated>1694234916528</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added Error handler to handle erros responses">
+      <option name="closed" value="true" />
+      <created>1694587977576</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1694587977576</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added App as a main system to run later on ínstead of main">
+      <option name="closed" value="true" />
+      <created>1694588008417</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1694588008417</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added Sucess Handler to handle success status">
+      <option name="closed" value="true" />
+      <created>1694588034069</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1694588034069</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added TextGui the main GUI for interacting between user and system">
+      <option name="closed" value="true" />
+      <created>1694588065132</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1694588065132</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Productions">
+      <option name="closed" value="true" />
+      <created>1694588082906</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1694588082906</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +210,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updates" />
     <MESSAGE value="Preparing starting codes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Preparing starting codes" />
+    <MESSAGE value="Added Error handler to handle erros responses" />
+    <MESSAGE value="Added App as a main system to run later on ínstead of main" />
+    <MESSAGE value="Added Sucess Handler to handle success status" />
+    <MESSAGE value="Added TextGui the main GUI for interacting between user and system" />
+    <MESSAGE value="Productions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Productions" />
   </component>
 </project>
