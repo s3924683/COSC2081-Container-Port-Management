@@ -176,12 +176,4 @@ public class ControlPanel {
         keepMenuRunning = false;
         menu.stop();
     }
-
-    public static void main(String[] args) {
-        //This function is only for testing, remove the function after testing
-        PortManager test = new PortManager("test","123456789");
-
-        ControlPanel panel = new ControlPanel(test);
-        panel.run();
-    }
 }
