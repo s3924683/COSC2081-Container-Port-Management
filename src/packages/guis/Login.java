@@ -33,7 +33,7 @@ public class Login{
 
         menu = new Menu("login", "Login Menu", guis);
     }
-    public void run(){
+    public HashMap<String, String> run(){
         keepMenuRunning = true;
 
         Scanner input = new Scanner(System.in);
@@ -79,13 +79,18 @@ public class Login{
             }
 
             if(userFound){
-                System.out.println(username);
-                //User class here
-                break;
+                HashMap<String, String> userData = new HashMap<>();
+
+                userData.put("username",username);
+                userData.put("password", password);
+                userData.put("type", type);
+
+               return  userData;
             }else{
                 System.out.println("Username or Password is incorrect!");
             }
         }
+        return null;
     }
     public void stop(){
         keepMenuRunning = false;
