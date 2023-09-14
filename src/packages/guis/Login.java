@@ -33,14 +33,19 @@ public class Login{
 
         menu = new Menu("login", "Login Menu", guis);
     }
-    public void run() throws FileNotFoundException {
+    public void run(){
         keepMenuRunning = true;
 
         Scanner input = new Scanner(System.in);
         Gui gui;
+        Scanner users = null;;
 
         while (keepMenuRunning){
-            Scanner users = new Scanner(new File("database/users.txt"));
+            try {
+                users = new Scanner(new File("database/users.txt"));
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
 
             gui = menu.run();
 
@@ -54,9 +59,9 @@ public class Login{
                 type = "portManager";
             }
 
-            System.out.print("Username: ");
+            System.out.print("Enter username: ");
             String username = input.next();
-            System.out.print("Password: ");
+            System.out.print("Enter password: ");
             String password = input.next();
 
             boolean userFound = false;
