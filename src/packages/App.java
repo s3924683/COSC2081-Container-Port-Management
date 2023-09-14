@@ -2,8 +2,6 @@ package packages;
 
 import packages.guis.Login;
 import packages.users.abstracts.User;
-
-import java.io.FileNotFoundException;
 import java.util.HashMap;
 
 public class App {
