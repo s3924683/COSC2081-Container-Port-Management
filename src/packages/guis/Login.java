@@ -21,13 +21,13 @@ public class Login{
         HashMap<String, String> guiOptions = new HashMap<>();
         guiOptions.put("1","System Admin");
         guiOptions.put("2","Port Manager");
-        Gui mainGui = new Gui("login","Login Panel", guiOptions);
+        Gui mainGui = new Gui("login","Login Panel", guiOptions, 2);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Log in");
         guiOptions.put("2","Go back");
-        Gui systemAdminLogin = new Gui("loginSystemAdmin", "Login panel for System admin", guiOptions);
-        Gui portManagerLogin = new Gui("loginPortManager", "Login panel for Port manager", guiOptions);
+        Gui systemAdminLogin = new Gui("loginSystemAdmin", "System admin", guiOptions,2);
+        Gui portManagerLogin = new Gui("loginPortManager", "Port manager", guiOptions,2);
 
         HashMap<String, Gui> guis = new HashMap<>();
         guis.put("1", mainGui);

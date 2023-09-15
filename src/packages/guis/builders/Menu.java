@@ -18,12 +18,6 @@ public class Menu{
         this.name = name;
         this.guis = guis;
     }
-
-    public Menu(String id, String name) {
-        this.id = id;
-        this.name = name;
-
-    }
     public HashMap<Object, Object> run(){
         if(!keepRunning){
             keepRunning = true;
@@ -35,7 +29,7 @@ public class Menu{
         while (keepRunning){
             Gui gui = guis.get(pointer);
 
-            String text = gui.getText();
+            String text = gui.toString();
 
             boolean noMoreGuis = false;
 
