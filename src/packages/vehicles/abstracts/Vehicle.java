@@ -1,8 +1,15 @@
 package packages.vehicles.abstracts;
 
+import packages.guis.builders.Gui;
+import packages.guis.builders.Menu;
 import packages.ports.abstracts.Port;
 
-public abstract class Vehicle {
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Vehicle {
     private String name;
     private double currentFuel;
     private double carryingCapacity;
@@ -17,7 +24,35 @@ public abstract class Vehicle {
         this.currentPort = currentPort;
         this.totalContainers = totalContainers;
     }
+    public static void displayAllVehicles() throws FileNotFoundException {
+        Scanner vehicles = new Scanner(new File("database/vehicles.txt"));
 
+        HashMap <String, String> vehiclesId = new HashMap<>();
+
+        int count = 1;
+
+        while (vehicles.hasNextLine()) {
+            String line = vehicles.nextLine();
+
+            String[] parts = line.split(",");
+
+            vehiclesId.put(String.valueOf(count), parts[0]);
+
+            count++;
+
+        }
+
+        Gui vehicleGui = new Gui("vehicle","Vehicle Ids", vehiclesId, 2);
+
+        HashMap<String, Gui> guis = new HashMap<>();
+        guis.put("1", vehicleGui);
+
+        Menu menu = new Menu("vehiclesDisplay", "Vehicle Display", guis);
+
+        HashMap<Object, Object> guiData = menu.run();
+
+        System.out.println(guiData);
+    }
     public String getName() {
         return name;
     }
@@ -65,4 +100,6 @@ public abstract class Vehicle {
     public void setTotalContainers(int totalContainers) {
         this.totalContainers = totalContainers;
     }
+
+    public static void main(String[] args) throws FileNotFoundException {}
 }

@@ -72,7 +72,26 @@ public class Menu{
                     }
                 };
             }else{
-                String index = pointer + " " + inputResult;
+                String index = pointer;
+
+                if(guis.size() == 1){
+                    String guiOption = gui.getOptions().get(inputResult);
+
+                    if(guiOption.equals("Go back")){
+                        pointer = oldPointer;
+                    }else if(guiOption.equals("Exit")){
+                        keepRunning = false;
+                    }else{
+                        HashMap<Object, Object> guiData = new HashMap<>();
+                        guiData.put("gui",gui);
+                        guiData.put("option", inputResult);
+
+                        return guiData;
+                    }
+                }else{
+                    index = pointer + " " + inputResult;
+                }
+
 
                 if(guis.containsKey(index)){
                     oldPointer = pointer;
