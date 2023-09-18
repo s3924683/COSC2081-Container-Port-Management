@@ -1,6 +1,6 @@
 package packages.vehicles.abstracts;
 
-import packages.guis.builders.Gui;
+import packages.guis.abstracts.Interface;
 import packages.guis.builders.Menu;
 import packages.ports.abstracts.Port;
 
@@ -42,10 +42,10 @@ public class Vehicle {
 
         }
 
-        Gui vehicleGui = new Gui("vehicle","Vehicle Ids", vehiclesId, 2);
+        Interface vehicleInterface = new Interface("vehicle","Vehicle Ids", vehiclesId, 2);
 
-        HashMap<String, Gui> guis = new HashMap<>();
-        guis.put("1", vehicleGui);
+        HashMap<String, Interface> guis = new HashMap<>();
+        guis.put("1", vehicleInterface);
 
         Menu menu = new Menu("vehiclesDisplay", "Vehicle Display", guis);
 

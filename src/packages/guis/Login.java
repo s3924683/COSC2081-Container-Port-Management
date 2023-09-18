@@ -1,6 +1,6 @@
 package packages.guis;
 
-import packages.guis.builders.Gui;
+import packages.guis.abstracts.Interface;
 import packages.guis.builders.Menu;
 import packages.users.PortManager;
 import packages.users.SystemAdmin;
@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
-
 public class Login{
     private Menu menu;
     private boolean keepMenuRunning = true;
@@ -21,16 +20,16 @@ public class Login{
         HashMap<String, String> guiOptions = new HashMap<>();
         guiOptions.put("1","System Admin");
         guiOptions.put("2","Port Manager");
-        Gui mainGui = new Gui("login","Login Panel", guiOptions, 2);
+        Interface mainInterface = new Interface("login","Login Panel", guiOptions, 2);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Log in");
         guiOptions.put("2","Go back");
-        Gui systemAdminLogin = new Gui("loginSystemAdmin", "System admin", guiOptions,2);
-        Gui portManagerLogin = new Gui("loginPortManager", "Port manager", guiOptions,2);
+        Interface systemAdminLogin = new Interface("loginSystemAdmin", "System admin", guiOptions,2);
+        Interface portManagerLogin = new Interface("loginPortManager", "Port manager", guiOptions,2);
 
-        HashMap<String, Gui> guis = new HashMap<>();
-        guis.put("1", mainGui);
+        HashMap<String, Interface> guis = new HashMap<>();
+        guis.put("1", mainInterface);
         guis.put("1 1", systemAdminLogin);
         guis.put("1 2", portManagerLogin);
 
@@ -40,7 +39,7 @@ public class Login{
         keepMenuRunning = true;
 
         Scanner input = new Scanner(System.in);
-        Gui gui;
+        Interface anInterface;
         Scanner users = null;;
 
         while (keepMenuRunning){
@@ -52,9 +51,9 @@ public class Login{
 
             HashMap<Object, Object> guiData = menu.run();
 
-            gui = (Gui) guiData.get("gui");
+            anInterface = (Interface) guiData.get("gui");
 
-            String id = gui.getId();
+            String id = anInterface.getId();
 
             String type;
 

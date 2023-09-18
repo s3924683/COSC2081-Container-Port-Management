@@ -1,6 +1,6 @@
 package packages.guis;
 
-import packages.guis.builders.Gui;
+import packages.guis.abstracts.Interface;
 import packages.guis.builders.Menu;
 import packages.users.abstracts.User;
 import java.util.HashMap;
@@ -15,18 +15,39 @@ public class ControlPanel {
 
             HashMap<Object, Object> guiData = this.controlMenu.run();
 
-            Gui gui = (Gui) guiData.get("gui");
+            Interface anInterface = (Interface) guiData.get("gui");
             String option = (String) guiData.get("option");
-            String id = gui.getId();
+            String id = anInterface.getId();
+
 
             switch (id) {
                 case "profilePanel" -> {
-                    HashMap<String, String> options = gui.getOptions();
+                    HashMap<String, String> options = anInterface.getOptions();
 
                     String textOption = options.get(option);
                     switch (textOption) {
                         case "Log out" -> {
                             this.user = null;
+                        }
+
+                        case "Change password" ->{
+                            //function to change password.
+                        }
+                    }
+                }
+                case "vehiclesPanel" ->{
+                    HashMap<String, String> options = anInterface.getOptions();
+
+                    String textOption = options.get(option);
+                    switch (textOption) {
+                        case "Update a vehicle" -> {
+                            //generate vehicle list
+                            //ask to give input
+                            //tell status
+                        }
+
+                        case "Change password" ->{
+                            //function to change password.
                         }
                     }
                 }
@@ -58,33 +79,33 @@ public class ControlPanel {
         guiOptions.put("4","Ports panel");
         guiOptions.put("5","Trips panel");
         guiOptions.put("6","Statistic");
-        Gui mainGui = new Gui("controlPanel","Control Panel", guiOptions, 4);
+        Interface mainInterface = new Interface("controlPanel","Control Panel", guiOptions, 4);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Change username");
         guiOptions.put("2","Change password");
         guiOptions.put("4","Log out");
         guiOptions.put("5","Go back");
-        Gui profilePanel = new Gui("profilePanel","Profile Panel", guiOptions, 2);
+        Interface profilePanel = new Interface("profilePanel","Profile Panel", guiOptions, 2);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Update a vehicle");
         guiOptions.put("2","Go back");
-        Gui vehiclesPanel = new Gui("vehiclesPanel","Vehicles Panel", guiOptions,2 );
+        Interface vehiclesPanel = new Interface("vehiclesPanel","Vehicles Panel", guiOptions,2 );
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Add a container");
         guiOptions.put("2","Update a container");
         guiOptions.put("3","Delete a container");
         guiOptions.put("4","Go back");
-        Gui containersPanel = new Gui("containersPanel","Containers Panel", guiOptions,2);
+        Interface containersPanel = new Interface("containersPanel","Containers Panel", guiOptions,2);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Add a trip");
         guiOptions.put("2","Update a trip");
         guiOptions.put("3","Delete a trip");
         guiOptions.put("4","Go back");
-        Gui tripsPanel = new Gui("tripsPanel","Trips Panel", guiOptions, 2);
+        Interface tripsPanel = new Interface("tripsPanel","Trips Panel", guiOptions, 2);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Profile");
@@ -94,11 +115,11 @@ public class ControlPanel {
         guiOptions.put("5","Trips");
         guiOptions.put("6","Summary");
         guiOptions.put("7","Go back");
-        Gui staticticPanel = new Gui("statisticPanel","Statistic Panel", guiOptions, 4);
+        Interface staticticPanel = new Interface("statisticPanel","Statistic Panel", guiOptions, 4);
 
-        HashMap<String, Gui> guis = new HashMap<>();
+        HashMap<String, Interface> guis = new HashMap<>();
 
-        guis.put("1", mainGui);
+        guis.put("1", mainInterface);
         guis.put("1 1", profilePanel);
         guis.put("1 2", vehiclesPanel);
         guis.put("1 3", containersPanel);
@@ -117,49 +138,50 @@ public class ControlPanel {
         guiOptions.put("5","Ports panel");
         guiOptions.put("6","Trips panel");
         guiOptions.put("7","Statistic");
-        Gui mainGui = new Gui("controlPanel","Control Panel", guiOptions,4);
+        Interface mainInterface = new Interface("controlPanel","Control Panel", guiOptions,4);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Change username");
         guiOptions.put("2","Change password");
         guiOptions.put("3","Log out");
         guiOptions.put("4","Go back");
-        Gui profilePanel = new Gui("profilePanel","Profile Panel", guiOptions,2);
+        Interface profilePanel = new Interface("profilePanel","Profile Panel", guiOptions,2);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Create an account");
         guiOptions.put("2","Update an account");
         guiOptions.put("3","Delete an account");
         guiOptions.put("4","Go back");
-        Gui portManagerPanel = new Gui("portManagerPanel","Port manager Panel", guiOptions,2);
+        Interface portManagerPanel = new Interface("portManagerPanel","Port manager Panel", guiOptions,2);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Add a vehicle");
         guiOptions.put("2","Update a vehicle");
         guiOptions.put("3","Delete a vehicle");
         guiOptions.put("4","Go back");
-        Gui vehiclesPanel = new Gui("vehiclesPanel","Vehicles Panel", guiOptions,2);
+        Interface vehiclesPanel = new Interface("vehiclesPanel","Vehicles Panel", guiOptions,2);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Add a container");
         guiOptions.put("2","Update a container");
         guiOptions.put("3","Delete a container");
         guiOptions.put("4","Go back");
-        Gui containersPanel = new Gui("containersPanel","Containers Panel", guiOptions,2);
+        Interface containersPanel = new Interface("containersPanel","Containers Panel", guiOptions,2);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Add a port");
         guiOptions.put("2","Update a port");
         guiOptions.put("3","Delete a port");
-        guiOptions.put("4","Go back");
-        Gui portsPanel = new Gui("portsPanel","Ports Panel", guiOptions,2);
+        guiOptions.put("4","Display all ports");
+        guiOptions.put("5","Go back");
+        Interface portsPanel = new Interface("portsPanel","Ports Panel", guiOptions,2);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Add a trip");
         guiOptions.put("2","Update a trip");
         guiOptions.put("3","Delete a trip");
         guiOptions.put("4","Go back");
-        Gui tripsPanel = new Gui("tripsPanel","Trips Panel", guiOptions,2);
+        Interface tripsPanel = new Interface("tripsPanel","Trips Panel", guiOptions,2);
 
         guiOptions = new HashMap<>();
         guiOptions.put("1","Profile");
@@ -170,11 +192,11 @@ public class ControlPanel {
         guiOptions.put("6","Trips");
         guiOptions.put("7","Summary");
         guiOptions.put("8","Go back");
-        Gui statisticPanel = new Gui("statisticPanel","Statistic Panel", guiOptions,4);
+        Interface statisticPanel = new Interface("statisticPanel","Statistic Panel", guiOptions,4);
 
-        HashMap<String, Gui> guis = new HashMap<>();
+        HashMap<String, Interface> guis = new HashMap<>();
 
-        guis.put("1", mainGui);
+        guis.put("1", mainInterface);
         guis.put("1 1", profilePanel);
         guis.put("1 2", portManagerPanel);
         guis.put("1 3", vehiclesPanel);

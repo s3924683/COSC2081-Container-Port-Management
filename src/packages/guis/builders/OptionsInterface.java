@@ -3,25 +3,11 @@ package packages.guis.builders;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Gui {
+public class OptionsInterface {
     private String id;
     private String name;
     private int width = 2;
     private HashMap<String, String> options;
-
-    public Gui(String id, String name, HashMap<String, String> options) {
-        this.id = id;
-        this.name = name;
-        this.options = options;
-    }
-
-    public Gui(String id, String name, HashMap<String, String> options, int width) {
-        this.id = id;
-        this.name = name;
-        this.options = options;
-        this.width = width;
-    }
-
     public String getId() {
         return id;
     }

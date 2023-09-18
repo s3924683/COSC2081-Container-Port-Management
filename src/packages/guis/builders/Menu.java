@@ -1,19 +1,21 @@
 package packages.guis.builders;
 
 import packages.ErrorHandlers;
+import packages.guis.abstracts.Interface;
+
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Menu{
     private String id;
     private String name;
-    private HashMap<String,Gui> guis;
+    private HashMap<String, Interface> guis;
 
     private boolean keepRunning = true;
     private String oldPointer = "1";
     private String pointer = "1";
 
-    public Menu(String id, String name, HashMap<String,Gui> guis) {
+    public Menu(String id, String name, HashMap<String, Interface> guis) {
         this.id = id;
         this.name = name;
         this.guis = guis;
@@ -27,9 +29,9 @@ public class Menu{
         int count = 0;
 
         while (keepRunning){
-            Gui gui = guis.get(pointer);
+            Interface anInterface = guis.get(pointer);
 
-            String text = gui.toString();
+            String text = anInterface.toString();
 
             boolean noMoreGuis = false;
 
@@ -53,7 +55,7 @@ public class Menu{
             }
 
             if(noMoreGuis){
-                String guiOption = gui.getOptions().get(inputResult);
+                String guiOption = anInterface.getOptions().get(inputResult);
 
                 if(guiOption == null){
                     ErrorHandlers.noOptionsFromInput(inputResult);
@@ -65,7 +67,7 @@ public class Menu{
                         keepRunning = false;
                     }else{
                         HashMap<Object, Object> guiData = new HashMap<>();
-                        guiData.put("gui",gui);
+                        guiData.put("gui", anInterface);
                         guiData.put("option", inputResult);
 
                         return guiData;
@@ -75,7 +77,7 @@ public class Menu{
                 String index = pointer;
 
                 if(guis.size() == 1){
-                    String guiOption = gui.getOptions().get(inputResult);
+                    String guiOption = anInterface.getOptions().get(inputResult);
 
                     if(guiOption.equals("Go back")){
                         pointer = oldPointer;
@@ -83,7 +85,7 @@ public class Menu{
                         keepRunning = false;
                     }else{
                         HashMap<Object, Object> guiData = new HashMap<>();
-                        guiData.put("gui",gui);
+                        guiData.put("gui", anInterface);
                         guiData.put("option", inputResult);
 
                         return guiData;
