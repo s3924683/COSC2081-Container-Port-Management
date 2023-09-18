@@ -1,7 +1,6 @@
-name, 30, portId
-name, 30, portId
-name, 30, portId
-name, 30, portId
-
-
-
+c1, 5.5, openTop, p1
+c1, 5.5, openTop, p1
+c1, 5.5, openTop, p1
+c1, 5.5, openTop, p1
+c1, 5.5, openTop, p1
+c1, 5.5, openTop, p1

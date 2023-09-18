@@ -1,10 +1,5 @@
-tr-01, truckA, 5, 10, p01, 10, truck, tanker truck
-tr-02, truckB, 6, 10, p01, 10, truck, tanker truck
-tr-03, truckC, 7, 10, p01, 10, truck, tanker truck
-tr-04, truckD, 8, 10, p01, 10, truck, tanker truck
-tr-05, truckE, 9, 10, p01, 10, truck, tanker truck
-tr-06, truckF, 10, 10, p01, 10, truck, tanker truck
-tr-07, truckG, 11, 10, p01, 10, truck, tanker truck
-tr-08, truckH, 12, 10, p01, 10, truck, tanker truck
-tr-09, truckK, 13, 10, p01, 10, truck, tanker truck
-tr-10, truckI, 14, 10, p01, 10, truck, tanker truck
+t01,eliza,ship,portA
+t02,azo,ship,portB
+t03,bookie,ship,portD
+t04,a,ship,portH
+t05,h,ship,portG

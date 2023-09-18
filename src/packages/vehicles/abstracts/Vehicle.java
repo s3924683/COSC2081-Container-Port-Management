@@ -1,7 +1,6 @@
 package packages.vehicles.abstracts;
 
-import packages.guis.abstracts.Interface;
-import packages.guis.builders.Menu;
+import packages.menu.builders.TableInterface;
 import packages.ports.abstracts.Port;
 
 import java.io.File;
@@ -31,27 +30,16 @@ public class Vehicle {
 
         int count = 1;
 
+        String[] cols = {"Id", "Name", "Type", "Port Id"};
+        TableInterface table = new TableInterface("vehicleDisplay","Vehicles",cols, ",");
+
         while (vehicles.hasNextLine()) {
             String line = vehicles.nextLine();
 
-            String[] parts = line.split(",");
-
-            vehiclesId.put(String.valueOf(count), parts[0]);
-
-            count++;
-
+           table.addRow(line);
         }
 
-        Interface vehicleInterface = new Interface("vehicle","Vehicle Ids", vehiclesId, 2);
-
-        HashMap<String, Interface> guis = new HashMap<>();
-        guis.put("1", vehicleInterface);
-
-        Menu menu = new Menu("vehiclesDisplay", "Vehicle Display", guis);
-
-        HashMap<Object, Object> guiData = menu.run();
-
-        System.out.println(guiData);
+        System.out.println(table.toString());
     }
     public String getName() {
         return name;
@@ -101,5 +89,7 @@ public class Vehicle {
         this.totalContainers = totalContainers;
     }
 
-    public static void main(String[] args) throws FileNotFoundException {}
+    public static void main(String[] args) throws FileNotFoundException {
+        displayAllVehicles();
+    }
 }
